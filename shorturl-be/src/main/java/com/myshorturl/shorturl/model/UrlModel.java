@@ -10,8 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 public class UrlModel {
     @Id
-    private String id;
-    private String shortUrl;
-    private String longUrl;
+    private final String id;
+    private final String shortUrl;
+    private final String longUrl;
     private int urlHit;
+    public void setUrlHit(int urlHit) {
+        this.urlHit = urlHit;
+    }
 }
