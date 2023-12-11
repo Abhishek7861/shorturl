@@ -18,21 +18,23 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @Slf4j
 public class ShortUrlController {
+
     private final UrlService urlService;
 
     @PostMapping
-    public ResponseEntity<UrlModel> createShortUrl(@RequestBody CreateUrlDto createUrlDto){
+    public ResponseEntity<UrlModel> createShortUrl(@RequestBody CreateUrlDto createUrlDto) {
         String shortUrl = GenerateHash.encryptThisString(createUrlDto.longUrl());
-        UrlModel urlModel = new UrlModel("1",shortUrl,createUrlDto.longUrl(),1);
+        UrlModel urlModel = new UrlModel("1", shortUrl, createUrlDto.longUrl(), 1);
         urlService.saveUrl(urlModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(urlModel);
     }
 
 
     @GetMapping("/{shortUrl}")
-    public ResponseEntity<String> getLongUrl(@PathVariable String shortUrl){
+    public ResponseEntity<String> getLongUrl(@PathVariable String shortUrl) {
         UrlModel urlModel = urlService.getUrlByShortUrl(shortUrl);
-        log.info("shortUrl : {} returns longUrl : {}",shortUrl,urlModel.getLongUrl());
-        return ResponseEntity.status(HttpStatus.TEMPORARY_REDIRECT).header("location",urlModel.getLongUrl()).body("");
+        log.info("shortUrl : {} returns longUrl : {}", shortUrl, urlModel.getLongUrl());
+        return ResponseEntity.status(HttpStatus.TEMPORARY_REDIRECT)
+            .header("location", urlModel.getLongUrl()).body("");
     }
 }
