@@ -1,14 +1,16 @@
 package com.myshorturl.shorturl.utils;
 
+import com.myshorturl.shorturl.repository.UrlRepository;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import org.springframework.stereotype.Component;
 
 @Component
+@AllArgsConstructor
 public class GenerateHash {
-    private GenerateHash(){}
 
     // TODO: Make a factory for this, so that we can change hash algorithm when there is a need
     // Make Hash Generation small in size.
@@ -37,6 +39,6 @@ public class GenerateHash {
     }
 
     public  String getUrlHash(@NonNull final String longUrl){
-        return getHash(longUrl);
+        return getHash(longUrl).substring(0,10);
     }
 }
