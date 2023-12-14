@@ -1,8 +1,8 @@
 import instance from './axiosConfig';
 
 
-export default function get(url, params) {
-    return instance.get(url, {params})
+export default function post(url, params) {
+    return instance.post(url, params)
       .then(response => {
         // console.log(response.data);
         return response;
