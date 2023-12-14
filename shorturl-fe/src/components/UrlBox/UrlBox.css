@@ -1,0 +1,44 @@
+.input-box{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 0.5px solid lightgray;
+    height: 200px;
+    margin: 15px;
+    border-radius: 10px;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.input-box-msg{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.input-field {
+    /* Increase the height of the input field */
+    height: 25px; /* Adjust the value based on your preference */
+    width: 65%; /* Set a specific width */
+    padding: 10px; /* Add some padding for better appearance */
+    border-radius: 15px;
+  }
+
+.submit-btn{
+    border-radius: 10px;
+    border: 1px black solid;
+    font-size: 20px;
+    width: 100px;
+    margin-top: 20px;
+    color: white;
+    background-color: blueviolet;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.input-box-url{
+    color: lightseagreen;
+    font-weight: 700;
+    text-align: left;
+}
