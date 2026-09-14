@@ -1,4 +1,4 @@
-# Short URL
+<img width="2824" height="562" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/eb02b1c4-dc1d-4b06-9f81-c3bc52b81f5f" /># Short URL
 
 A full-stack URL shortening application built with **Spring Boot**, **MongoDB**, and **React**.
 
@@ -10,20 +10,8 @@ The application allows users to:
 - View the original long URL associated with a short URL.
 
 ## Architecture
+<img width="2824" height="562" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/33fc337b-4ee6-4b79-924c-2632629552cd" />
 
-```mermaid
-flowchart LR
-    U[User / Browser] --> F[React Frontend]
-    F -->|POST /| C[Spring Boot REST API]
-    F -->|GET /{shortUrl}/info| C
-    U -->|Open short URL| C
-    C --> S[UrlService]
-    S --> V[ValidateUrl]
-    S --> H[GenerateHash]
-    S --> R[UrlRepository]
-    R --> M[(MongoDB)]
-    C -->|307 Temporary Redirect| U
-```
 
 ## Tech Stack
 
