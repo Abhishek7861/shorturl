@@ -1,5 +1,3 @@
-<img width="2824" height="562" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/eb02b1c4-dc1d-4b06-9f81-c3bc52b81f5f" /># Short URL
-
 A full-stack URL shortening application built with **Spring Boot**, **MongoDB**, and **React**.
 
 The application allows users to:
